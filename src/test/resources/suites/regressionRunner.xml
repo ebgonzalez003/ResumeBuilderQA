@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite de Regression">
+    <listeners>
+        <listener class-name="Utils.BaseTest"/>
+    </listeners>
+    <test name="Regression 1.0">
+        
+        <groups>
+            <run>
+                <include name="regression" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Test.ResumeTest" />
+        </classes>
+    </test>
+
+</suite>
