@@ -8,7 +8,7 @@
             </run>
         </groups>
         <classes>
-            <class name="Test.ShoppingTest" />
+            <class name="Test.ResumeTest" />
         </classes>
     </test>
 

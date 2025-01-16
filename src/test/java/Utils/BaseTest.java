@@ -12,7 +12,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-
 import java.lang.reflect.Method;
 import java.time.Duration;
 
@@ -56,7 +55,7 @@ public class BaseTest implements ITestListener {
             test.skip("Test Skipped");
         }
         LoggerUtil.info(ConstantsData.LOG_END + methodName);
-        if(driver!=null)driver.quit();
+       // if(driver!=null)driver.quit();
     }
 
     @AfterSuite(groups = {"regression","smoke"})
