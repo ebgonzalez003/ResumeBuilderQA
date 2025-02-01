@@ -21,4 +21,5 @@ public class ResumeTest extends BaseTest {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
         }
     }
+
 }
