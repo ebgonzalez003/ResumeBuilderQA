@@ -1,8 +1,10 @@
 package Test;
 
 import Data.ConstantsData;
+import Pages.MainPage;
 import Utils.BaseTest;
 import Utils.LoggerUtil;
+import Utils.ProfileData;
 import org.testng.annotations.Test;
 
 public class ResumeTest extends BaseTest {
@@ -20,6 +22,18 @@ public class ResumeTest extends BaseTest {
         }catch (Exception e){
             LoggerUtil.error(ConstantsData.LOG_ERROR);
         }
+    }
+
+    @Test(groups = {"regression"})
+    public void updateProfileCorrectly(){
+        ProfileData pd = new ProfileData();
+        pd.profile= "Lorem";
+        pd.title = "Cosa";
+        pd.country = "Mexico";
+        loginPage.userLogin("ebgonzalez@techmahindra.com", "@Cristo1998");
+        mainPage.modifyProfile(pd);
+
+
     }
 
 }

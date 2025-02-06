@@ -2,6 +2,7 @@ package Utils;
 
 import Data.ConstantsData;
 import Pages.LoginPage;
+import Pages.MainPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +25,7 @@ public class BaseTest implements ITestListener {
     public ExtentReports extent;
     public String methodName;
     public LoginPage loginPage ;
+    public MainPage mainPage;
 
     @BeforeSuite(groups = {"regression","smoke"})
     public void reportSetUp(){
@@ -40,6 +42,7 @@ public class BaseTest implements ITestListener {
         driver.get("http://localhost:3000/");
         commands = new CommonCommands(driver, test);
         loginPage = new LoginPage(commands);
+        mainPage = new MainPage(commands);
         methodName = method.getName();
         LoggerUtil.info(ConstantsData.LOG_START + methodName);
     }
@@ -55,7 +58,7 @@ public class BaseTest implements ITestListener {
             test.skip("Test Skipped");
         }
         LoggerUtil.info(ConstantsData.LOG_END + methodName);
-       // if(driver!=null)driver.quit();
+        if(driver!=null)driver.quit();
     }
 
     @AfterSuite(groups = {"regression","smoke"})

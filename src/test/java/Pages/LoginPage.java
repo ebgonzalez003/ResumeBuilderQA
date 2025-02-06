@@ -11,8 +11,8 @@ public class LoginPage {
     }
 
     public void userLogin(String userEmail, String password){
-        commands.sendKeysToElement(lg.LoginPageUserEmail, userEmail);
-        commands.sendKeysToElement(lg.LoginPagePassword, password);
-        commands.clickElement(lg.LoginPageLoginBtn);
+        commands.sendKeysToElement(lg.loginPageUserEmail, userEmail);
+        commands.sendKeysToElement(lg.loginPagePassword, password);
+        commands.clickElement(lg.loginPageLoginBtn);
     }
 }
