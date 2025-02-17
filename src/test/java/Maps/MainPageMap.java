@@ -9,6 +9,9 @@ public class MainPageMap {
     //NavSection
     public By drawerBtn = By.xpath("//button[@aria-label='open drawer']");
     public By downloadBtn = By.xpath("//*[@id='root']/div/div/div[1]/header/div/div[3]/button");
+    public By hamburguerBtn = By.xpath("//*[@id='root']/div/div/div[1]/header/div/button/svg/path");
+    public By logoutBtn = By.xpath("//div[3]/div[3]/ul/li[2]/div/div[2]/span");
+    public By profileBtn = By.xpath("//div[3]/div[3]/ul/li[1]/div/div[2]/span");
 
     //Top Page Section
     public By editNameBtn = By.xpath("//*[@alt='Remy Sharp']/../../button");

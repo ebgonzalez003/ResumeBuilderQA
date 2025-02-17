@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 
 public class CommonCommands {
@@ -98,9 +99,9 @@ public class CommonCommands {
         }
     }
     // Método para esperar hasta que un elemento sea visible por un máximo de 10 segundos
-    public void waitForElementToBeVisible(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(element));
+    public void waitForElementToBeVisible(By element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(element)));
     }
 
     // Método para esperar hasta que un elemento sea clickeable por un máximo de 10 segundos
@@ -169,5 +170,9 @@ public class CommonCommands {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.moveToElement(element, xOffset, yOffset).click().perform();
     }
-
+    public String generateEmail() {
+        Random random = new Random();
+        int number = random.nextInt(100000);
+        return "test.user" + number + "@techmahindra.com";
+        }
 }

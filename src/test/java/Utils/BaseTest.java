@@ -1,6 +1,7 @@
 package Utils;
 
 import Data.ConstantsData;
+import Maps.LoginPageMap;
 import Pages.LoginPage;
 import Pages.MainPage;
 import com.aventstack.extentreports.ExtentReports;
@@ -26,6 +27,7 @@ public class BaseTest implements ITestListener {
     public String methodName;
     public LoginPage loginPage ;
     public MainPage mainPage;
+    public LoginPageMap loginMapPage;
 
     @BeforeSuite(groups = {"regression","smoke"})
     public void reportSetUp(){
@@ -43,6 +45,7 @@ public class BaseTest implements ITestListener {
         commands = new CommonCommands(driver, test);
         loginPage = new LoginPage(commands);
         mainPage = new MainPage(commands);
+        loginMapPage = new LoginPageMap();
         methodName = method.getName();
         LoggerUtil.info(ConstantsData.LOG_START + methodName);
     }

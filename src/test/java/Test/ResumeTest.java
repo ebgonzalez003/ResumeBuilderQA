@@ -1,10 +1,13 @@
 package Test;
 
 import Data.ConstantsData;
+import Maps.MainPageMap;
 import Pages.MainPage;
 import Utils.BaseTest;
 import Utils.LoggerUtil;
 import Utils.ProfileData;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ResumeTest extends BaseTest {
@@ -30,9 +33,20 @@ public class ResumeTest extends BaseTest {
         pd.profile= "Lorem";
         pd.title = "Cosa";
         pd.country = "Mexico";
-        loginPage.userLogin("ebgonzalez@techmahindra.com", "@Cristo1998");
+        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
         mainPage.modifyProfile(pd);
+    }
 
+    @Test (groups = {"regression"})
+    public void validateUserCanLogout(){
+        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+        mainPage.validateLogout();
+        Assert.assertEquals(driver.getCurrentUrl(), "http://localhost:3000/");
+    }
+
+    @Test (groups = {"regression"})
+    public void validateUserCanCreateAnAccount(){
+        loginPage.validateCreateAccount();
 
     }
 
