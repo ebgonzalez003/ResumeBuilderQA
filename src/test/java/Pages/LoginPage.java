@@ -1,5 +1,6 @@
 package Pages;
 
+import Data.ConstantsData;
 import Maps.LoginPageMap;
 import Utils.CommonCommands;
 
@@ -25,5 +26,17 @@ public class LoginPage {
         commands.sendKeysToElement(loginPageMap.titleTxtBx, "engineer");
         commands.sendKeysToElement(loginPageMap.passwordTxtBx, "@Gpassword1");
         commands.clickElement(loginPageMap.createBtn);
+    }
+
+    public void validateResetPwd(){
+        commands.clickElement(loginPageMap.forgotPasswordBtn);
+        commands.clickElement(loginPageMap.createTicketBtn);
+        commands.waitForUrlContains("http://localhost:3000/forgot-password");
+        commands.switchToTab(1);
+        commands.sendKeysToElement(loginPageMap.emailTicketTxtBx, commands.generateEmail());
+        commands.clickElement(loginPageMap.nextTicketBtn);
+        commands.sendKeysToElement(loginPageMap.pwdTicketTxtBx, ConstantsData.VALID_PASSWORD);
+        commands.clickElement(loginPageMap.registryBtn);
+        commands.waitForElementToBeVisible(loginPageMap.helpTxt);
     }
 }

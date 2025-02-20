@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -175,4 +176,17 @@ public class CommonCommands {
         int number = random.nextInt(100000);
         return "test.user" + number + "@techmahindra.com";
         }
+
+    public void waitForUrlContains(String expectedUrlPart){
+        wait.until(ExpectedConditions.urlContains((expectedUrlPart)));
+    }
+
+    public void switchToTab (int tabIndex){
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        if (tabIndex >= 0 && tabIndex < tabs.size()){
+            driver.switchTo().window(tabs.get(tabIndex));
+        }else {
+            throw new IllegalArgumentException("Index Out Of Bounds");
+        }
+    }
 }

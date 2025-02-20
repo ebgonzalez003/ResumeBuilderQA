@@ -1,17 +1,13 @@
 package Test;
-
 import Data.ConstantsData;
-import Maps.MainPageMap;
-import Pages.MainPage;
 import Utils.BaseTest;
 import Utils.LoggerUtil;
 import Utils.ProfileData;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ResumeTest extends BaseTest {
-    @Test(groups = {"regression"})
+    @Test(groups = {"smoke"})
     public void validateLoginCredetianls() {
         try {
             LoggerUtil.debug(ConstantsData.LOG_ACTIONS);
@@ -27,7 +23,7 @@ public class ResumeTest extends BaseTest {
         }
     }
 
-    @Test(groups = {"regression"})
+    @Test(groups = {"smoke"})
     public void updateProfileCorrectly(){
         ProfileData pd = new ProfileData();
         pd.profile= "Lorem";
@@ -48,6 +44,11 @@ public class ResumeTest extends BaseTest {
     public void validateUserCanCreateAnAccount(){
         loginPage.validateCreateAccount();
 
+    }
+
+    @Test (groups = {"regression"})
+    public void validateUserCanResetPwd(){
+        loginPage.validateResetPwd();
     }
 
 }
