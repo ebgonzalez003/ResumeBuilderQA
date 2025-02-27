@@ -8,10 +8,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 
 public class CommonCommands {
     public WebDriver driver;
@@ -29,12 +30,12 @@ public class CommonCommands {
 
     // Method to click an element with explicit wait
     public void clickElement(By locator) {
-        try{
+        try {
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
             element.click();
-            test.pass("Successfully click on element: " + locator );
-        }catch (Exception e){
-            test.fail("Not able to click on element: " + locator) ;
+            test.pass("Successfully click on element: " + locator);
+        } catch (Exception e) {
+            test.fail("Not able to click on element: " + locator);
         }
     }
 
@@ -44,9 +45,9 @@ public class CommonCommands {
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             element.clear();
             element.sendKeys(text);
-            test.pass("Successfully Keys sent correctly:  " + locator );
-        }catch (Exception e){
-            test.fail("The keys were not sent correctly:  " + locator) ;
+            test.pass("Successfully Keys sent correctly:  " + locator);
+        } catch (Exception e) {
+            test.fail("The keys were not sent correctly:  " + locator);
         }
     }
 
@@ -91,6 +92,7 @@ public class CommonCommands {
             return false;
         }
     }
+
     public boolean waitForElementToDisappear(By by) {
         try {
 
@@ -99,6 +101,7 @@ public class CommonCommands {
             return false;
         }
     }
+
     // Método para esperar hasta que un elemento sea visible por un máximo de 10 segundos
     public void waitForElementToBeVisible(By element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -110,6 +113,7 @@ public class CommonCommands {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public void scrollToElement(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.moveToElement(element).perform();
@@ -120,6 +124,7 @@ public class CommonCommands {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
         actions.moveToElement(element).click().perform();
     }
+
     // Method to check if an element is visible
     public boolean isElementVisible(By locator) {
         try {
@@ -130,37 +135,44 @@ public class CommonCommands {
         }
 
     }
+
     // Método para hacer clic y mantener presionado (click and hold)
     public void clickAndHoldActions(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.clickAndHold(element).perform();
     }
+
     // Método para hacer doble clic en un elemento
     public void doubleClickActions(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.doubleClick(element).perform();
     }
+
     // Método para arrastrar y soltar (drag and drop) de un elemento a otro
     public void dragAndDropActions(By sourceLocator, By targetLocator) {
         WebElement sourceElement = wait.until(ExpectedConditions.visibilityOfElementLocated(sourceLocator));
         WebElement targetElement = wait.until(ExpectedConditions.visibilityOfElementLocated(targetLocator));
         actions.dragAndDrop(sourceElement, targetElement).perform();
     }
+
     // Método para mover el mouse sobre un elemento (hover)
     public void hoverOverElementActions(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.moveToElement(element).perform();
     }
+
     // Método para arrastrar un elemento por ciertos offsets (drag and drop by offset)
     public void dragAndDropByOffsetActions(By locator, int xOffset, int yOffset) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.dragAndDropBy(element, xOffset, yOffset).perform();
     }
+
     // Método para hacer clic derecho (context click)
     public void rightClickActions(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.contextClick(element).perform();
     }
+
     // Método para enviar teclas de teclado a un elemento (teclas como ENTER, TAB, etc.)
     public void sendKeysToElementActions(By locator, CharSequence... keys) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -175,18 +187,74 @@ public class CommonCommands {
         Random random = new Random();
         int number = random.nextInt(100000);
         return "test.user" + number + "@techmahindra.com";
-        }
-
-    public void waitForUrlContains(String expectedUrlPart){
+    }
+    public void waitForUrlContains(String expectedUrlPart) {
         wait.until(ExpectedConditions.urlContains((expectedUrlPart)));
     }
-
-    public void switchToTab (int tabIndex){
+    public void switchToTab(int tabIndex) {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-        if (tabIndex >= 0 && tabIndex < tabs.size()){
+        if (tabIndex >= 0 && tabIndex < tabs.size()) {
             driver.switchTo().window(tabs.get(tabIndex));
-        }else {
+        } else {
             throw new IllegalArgumentException("Index Out Of Bounds");
         }
+    }
+    public void selectRandomDate(String calendarButtonLocator, String calendarDaysLocator, int daysRange) {
+        WebElement calendarButton = driver.findElement(By.xpath(calendarButtonLocator));
+        calendarButton.click();
+        LocalDate today = LocalDate.now();
+        Random random = new Random();
+        LocalDate randomDate = today.plusDays(random.nextInt(daysRange) + 1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d");
+        List<WebElement> availableDays = driver.findElements(By.xpath(calendarDaysLocator));
+        for (WebElement day : availableDays) {
+            if (day.getText().equals(randomDate.format(formatter))) {
+                day.click();
+                break;
+            }
+        }
+    }
+    public String generateRandomLorem(int wordCount) {
+        String[] loremWords = {
+                "lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
+                "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore",
+                "magna", "aliqua", "ut", "enim", "ad", "minim", "veniam", "quis", "nostrud",
+                "exercitation", "ullamco", "laboris", "nisi", "ut", "aliquip", "ex", "ea",
+                "commodo", "consequat", "duis", "aute", "irure", "dolor", "in", "reprehenderit",
+                "in", "voluptate", "velit", "esse", "cillum", "dolore", "eu", "fugiat", "nulla",
+                "pariatur", "excepteur", "sint", "occaecat", "cupidatat", "non", "proident",
+                "sunt", "in", "culpa", "qui", "officia", "deserunt", "mollit", "anim", "id",
+                "est", "laborum"
+        };
+        Random random = new Random();
+        StringBuilder loremText = new StringBuilder();
+        for (int i = 0; i < wordCount; i++) {
+            if (i > 0) {
+                loremText.append(" ");
+            }
+            loremText.append(loremWords[random.nextInt(loremWords.length)]);
+        }
+        String result = loremText.toString();
+        result = result.substring(0, 1).toUpperCase() + result.substring(1) + ".";
+        return result;
+    }
+    public String generateRandomTechnologies(int wordCount) {
+        String[] loremWords = {
+                "Selenium", "Java", "Python", "GitHub Actions", "SnagIt", "Asana", "Visual Studio",
+                "MacOS", "Windows Os", "Linux", "Eclipse Framework", "Azure DevOps", "AWS", "GCP", "Cypress",
+                "SQL", "Jmeter", "Jira", "TestRail", "QASE", "Poetry", "Appium", "RestAssured", "Karate", "JavaScript",
+                "Angular", "JBOSS", "Oracle", "JQuery", "Apache", "Rest WS", "C", "C++", "IntelliJ", "Pycharm", "MongoDB", "Jenkins"
+        };
+        Random random = new Random();
+        StringBuilder loremText = new StringBuilder();
+        for (int i = 0; i < wordCount; i++) {
+            if (i > 0) {
+                loremText.append(" ");
+            }
+            loremText.append(loremWords[random.nextInt(loremWords.length)]);
+        }
+        String result = loremText.toString();
+        result = result.substring(0, 1).toUpperCase() + result.substring(1) + ".";
+        return result;
     }
 }

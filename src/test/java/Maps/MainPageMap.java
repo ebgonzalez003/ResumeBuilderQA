@@ -29,7 +29,7 @@ public class MainPageMap {
     public By locationTxtBx = By.id("Location");
     public By descriptionBtn = By.id("standard-multiline-static");
     public By technologiesBtn = By.id("technologies");
-
+    public By saveExperienceBtn = By.xpath("//div[3]/div[3]/div/div/div[3]/button[2]");
     //Skills Section
     public By addSkillsBtn = By.xpath("//h2[text()='SKILLS']/following-sibling::div/button");
 

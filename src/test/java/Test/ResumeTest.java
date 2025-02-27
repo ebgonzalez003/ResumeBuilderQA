@@ -51,4 +51,20 @@ public class ResumeTest extends BaseTest {
         loginPage.validateResetPwd();
     }
 
+    @Test (groups = {"regression"})
+    public void validateUserCanUpdateExperience(){
+        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+        mainPage.validateUserCanUpdateExperience();
+    }
+    @Test (groups = {"regression"})
+    public void validateUserCanUpdateSkills(){
+        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+        mainPage.validateUserCanAddSkills();
+    }
+    @Test (groups = {"regression"})
+    public void validateUserCanAddEducation(){
+        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+        mainPage.validateUserCanAddEducation();
+    }
+
 }

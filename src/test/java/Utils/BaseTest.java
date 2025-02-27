@@ -1,5 +1,4 @@
 package Utils;
-
 import Data.ConstantsData;
 import Maps.LoginPageMap;
 import Pages.LoginPage;
@@ -16,7 +15,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import java.lang.reflect.Method;
 import java.time.Duration;
-
 import static Utils.ScreenshotUtils.takeScreenshot;
 
 public class BaseTest implements ITestListener {
