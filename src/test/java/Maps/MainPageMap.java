@@ -42,7 +42,8 @@ public class MainPageMap {
     //Certifications Section
     public By certificationsAddBtn = By.xpath("//h2[text()='CERTIFICATIONS/TRAININGS']/following-sibling::div/button");
     public By nameTxtBx = By.id("name");
-    public By institutionBx = By.xpath("institution");
+    public By institutionBx = By.id("institution");
+    public By certificationDateBx = By.id("year");
     public By linkBx = By.id("link");
     public By saveCertBtn = By.xpath("//div[3]/div[3]/div/div/div[5]/button[2]");
     public By cancelCertBtn = By.xpath("//div[3]/div[3]/div/div/div[5]/button[1]");

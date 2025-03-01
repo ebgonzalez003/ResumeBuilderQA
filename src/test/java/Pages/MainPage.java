@@ -49,4 +49,11 @@ public class MainPage {
         commands.sendKeysToElement(mainPageMap.institutionTxtBx, "UNID");
     }
 
+    public void validateUserCanAddCertifications(){
+        commands.clickElement(mainPageMap.certificationsAddBtn);
+        commands.sendKeysToElement(mainPageMap.nameTxtBx, "GCP");
+        commands.sendKeysToElement(mainPageMap.institutionBx, "Google");
+        commands.sendKeysToElement(mainPageMap.certificationDateBx, String.valueOf(commands.currentDate()));
+
+    }
 }

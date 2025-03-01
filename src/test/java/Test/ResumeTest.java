@@ -66,5 +66,10 @@ public class ResumeTest extends BaseTest {
         loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
         mainPage.validateUserCanAddEducation();
     }
+    @Test (groups = {"regression"})
+    public void validateUserCanAddCertifications(){
+        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+        mainPage.validateUserCanAddCertifications();
+    }
 
 }

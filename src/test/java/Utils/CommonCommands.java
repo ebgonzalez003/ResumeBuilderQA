@@ -11,6 +11,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -257,4 +258,15 @@ public class CommonCommands {
         result = result.substring(0, 1).toUpperCase() + result.substring(1) + ".";
         return result;
     }
+    public int generateRandomNumber(int min, int max) {
+        Random random = new Random();
+        return random.nextInt((max - min) + 1) + min;
+    }
+
+    public String currentDate(){
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return currentDate.format(format);
+    }
+
 }
