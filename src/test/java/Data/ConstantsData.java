@@ -15,4 +15,8 @@ public class ConstantsData {
     // User credentials
     public final static String VALID_USERNAME =  "ebgonzalez@techmahindra.com";
     public final static String VALID_PASSWORD = "@Cristo1998";
+    //Extra
+    public final static String Mexico = "Mexico";
+    public final static String URL = "http://localhost:3000/";
+    public final static String UrlHelp = "https://techmcne.atlassian.net/servicedesk/customer/portal/1/user/signup?destination=portal%2F1%2Fgroup%2F1%2Fcreate%2F179";
 }

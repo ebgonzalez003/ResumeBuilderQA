@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 public class MainPageMap {
     //CommonSection
     public By saveBtn = By.xpath("//*[@data-testid='SaveIcon']");
+    public By techMImg = By.xpath("//*[@id='root']/div/div/div[1]/header/div/div[1]/a/img");
 
     //NavSection
     public By drawerBtn = By.xpath("//button[@aria-label='open drawer']");
@@ -51,12 +52,31 @@ public class MainPageMap {
     //Languages Section
     public By languagesAddBtn = By.xpath("//h2[text()='LANGUAGES']/following-sibling::div/button");
     public By languageTxtBx = By.xpath("//*[@id='name']");
+    public By languageLvlDdw = By.xpath("//label[contains (text(), 'Level')]//following-sibling::div"); // added by andrexo
+    public By languageLvlDdwOpts = By.xpath("//ul[@role='listbox']//li[1]");
+    public By langualeBasicOption = By.xpath("//li[text()='Basic']");
+    public By langualeIntermidateOption = By.xpath("//li[text()='Intermediate']");// add by andrexo
+    public By langualeAdvancedOption = By.xpath("//li[text()='Advanced']");// add by
+    public By langualeNativeOption = By.xpath("//li[text()='Native']");// add by
     public By saveLangBtn = By.xpath("//div[3]/div[3]/div/div/div[3]/button[2]");
     public By cancelLangBtn = By.xpath("//div[3]/div[3]/div/div/div[3]/button[1]");
 
     //Interest Section
     public By interestAddBtn = By.xpath("//h2[text()='INTERESTS']/following-sibling::div/button");
+    public By interestLabel = By.xpath("//h2[contains(text(),'ADD INTEREST')]");
+    public By interestField = By.xpath("//label[contains (text(),'Interest')]");
+    public By cancelInterestBtn = By.xpath("//h2[contains(text(),'ADD INTEREST')]//following-sibling::div[2]/button[1]");
+    public By saveInterestBtn = By.xpath("//h2[contains(text(),'ADD INTEREST')]//following-sibling::div[2]/button[2]");
+
 
     //Availability To Travel Section
     public By travelEditBtn = By.xpath("//h2[text()='AVAILABILITY TO TRAVEL']/following-sibling::div/button");
+    public By travelSaveBtn = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/form/div/div[1]/div/button[1]");
+    public By relocateChkBx = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/form/div/div[2]/div/div/div[2]/div/label/span");
+    public By availabilityChckBx = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/form/div/div[2]/div/div/div[1]/div/label/span");
+    public By relocateChckBx = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/form/div/div[2]/div/div/div[2]/div/label/span/input");
+    public By passportExpDateBx = By.id(":r1l:");
+    public By visaExpirationDateBx = By.id(":r1n:");
+    public By visaTypeBx = By.id(":r1p:");
+
 }

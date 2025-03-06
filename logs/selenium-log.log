@@ -162,3 +162,98 @@
 2025-02-28 12:30:51 [main] INFO : Validate: validateUserCanUpdateExperience
 2025-02-28 12:30:56 [main] INFO : Starting test: validateUserCanUpdateSkills
 2025-02-28 12:30:57 [main] INFO : Validate: validateUserCanUpdateSkills
+2025-03-03 20:39:56 [main] INFO : Starting test: updateProfileCorrectly
+2025-03-03 20:41:08 [main] INFO : Validate: updateProfileCorrectly
+2025-03-03 20:41:14 [main] INFO : Starting test: validateLoginCredetianls
+2025-03-03 20:41:15 [main] INFO : Action completed 
+2025-03-03 20:41:15 [main] INFO : Validate: validateLoginCredetianls
+2025-03-03 20:41:19 [main] INFO : Starting test: validateUserCanAddCertifications
+2025-03-03 20:41:24 [main] INFO : Validate: validateUserCanAddCertifications
+2025-03-03 20:41:28 [main] INFO : Starting test: validateUserCanAddEducation
+2025-03-03 20:41:32 [main] INFO : Validate: validateUserCanAddEducation
+2025-03-03 20:41:40 [main] INFO : Starting test: validateUserCanCreateAnAccount
+2025-03-03 20:41:42 [main] INFO : Validate: validateUserCanCreateAnAccount
+2025-03-03 20:41:46 [main] INFO : Starting test: validateUserCanLogout
+2025-03-03 20:42:08 [main] INFO : Validate: validateUserCanLogout
+2025-03-03 20:42:13 [main] INFO : Starting test: validateUserCanResetPwd
+2025-03-03 20:42:28 [main] INFO : Validate: validateUserCanResetPwd
+2025-03-03 20:42:32 [main] INFO : Starting test: validateUserCanUpdateExperience
+2025-03-03 20:42:42 [main] INFO : Validate: validateUserCanUpdateExperience
+2025-03-03 20:42:47 [main] INFO : Starting test: validateUserCanUpdateSkills
+2025-03-03 20:42:48 [main] INFO : Validate: validateUserCanUpdateSkills
+2025-03-04 11:44:32 [main] INFO : Starting test: updateProfileCorrectly
+2025-03-04 11:45:43 [main] INFO : Validate: updateProfileCorrectly
+2025-03-04 11:45:48 [main] INFO : Starting test: validateLoginCredetianls
+2025-03-04 11:45:49 [main] INFO : Action completed 
+2025-03-04 11:45:49 [main] INFO : Validate: validateLoginCredetianls
+2025-03-04 11:45:52 [main] INFO : Starting test: validateUserCanAddCertifications
+2025-03-04 11:45:55 [main] INFO : Validate: validateUserCanAddCertifications
+2025-03-04 11:45:58 [main] INFO : Starting test: validateUserCanAddEducation
+2025-03-04 11:46:02 [main] INFO : Validate: validateUserCanAddEducation
+2025-03-04 11:46:06 [main] INFO : Starting test: validateUserCanCreateAnAccount
+2025-03-04 11:46:07 [main] INFO : Validate: validateUserCanCreateAnAccount
+2025-03-04 11:46:11 [main] INFO : Starting test: validateUserCanLogout
+2025-03-04 11:46:32 [main] INFO : Validate: validateUserCanLogout
+2025-03-04 11:46:36 [main] INFO : Starting test: validateUserCanResetPwd
+2025-03-04 11:46:50 [main] INFO : Validate: validateUserCanResetPwd
+2025-03-04 11:46:54 [main] INFO : Starting test: validateUserCanUpdateExperience
+2025-03-04 11:47:02 [main] INFO : Validate: validateUserCanUpdateExperience
+2025-03-04 11:47:07 [main] INFO : Starting test: validateUserCanUpdateSkills
+2025-03-04 11:47:09 [main] INFO : Validate: validateUserCanUpdateSkills
+2025-03-05 13:11:53 [main] INFO : Starting test: validateUserCanAddInterests
+2025-03-05 13:11:55 [main] INFO : Validate: validateUserCanAddInterests
+2025-03-05 13:17:46 [main] INFO : Starting test: validateUserCanCancelInterests
+2025-03-05 13:17:48 [main] INFO : Validate: validateUserCanCancelInterests
+2025-03-05 13:20:36 [main] INFO : Starting test: validateUserCanCancelInterests
+2025-03-05 13:20:38 [main] INFO : Validate: validateUserCanCancelInterests
+2025-03-05 13:50:50 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 13:50:58 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 13:52:11 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 13:52:18 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 13:59:06 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 13:59:13 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 14:04:09 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 14:04:15 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 14:05:33 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 14:05:36 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 14:06:36 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 14:06:40 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 17:57:33 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 17:57:42 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 18:00:25 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 18:00:28 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 18:04:44 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 18:04:52 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-05 18:08:48 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-03-05 18:08:50 [main] INFO : Validate: validateUserCanAddLanguage
+2025-03-06 11:28:49 [main] INFO : Starting test: validateUserCanLogout
+2025-03-06 11:29:22 [main] INFO : Validate: validateUserCanLogout
+2025-03-06 11:56:17 [main] INFO : Starting test: validateLoginCredetianls
+2025-03-06 11:56:18 [main] INFO : Action completed 
+2025-03-06 11:56:18 [main] INFO : Validate: validateLoginCredetianls
+2025-03-06 11:57:04 [main] INFO : Starting test: updateProfileCorrectly
+2025-03-06 11:58:16 [main] INFO : Validate: updateProfileCorrectly
+2025-03-06 12:06:26 [main] INFO : Starting test: validateUserCanCreateAnAccount
+2025-03-06 12:06:28 [main] INFO : Validate: validateUserCanCreateAnAccount
+2025-03-06 12:07:09 [main] INFO : Starting test: validateUserCanResetPwd
+2025-03-06 12:07:24 [main] INFO : Validate: validateUserCanResetPwd
+2025-03-06 12:09:08 [main] INFO : Starting test: validateUserCanResetPwd
+2025-03-06 12:09:23 [main] INFO : Validate: validateUserCanResetPwd
+2025-03-06 12:10:10 [main] INFO : Starting test: validateUserCanResetPwd
+2025-03-06 12:10:24 [main] INFO : Validate: validateUserCanResetPwd
+2025-03-06 12:10:48 [main] INFO : Starting test: validateUserCanUpdateExperience
+2025-03-06 12:10:58 [main] INFO : Validate: validateUserCanUpdateExperience
+2025-03-06 12:38:45 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-03-06 12:39:09 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-03-06 12:40:06 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-03-06 12:40:32 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-03-06 12:41:57 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-03-06 12:42:13 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-03-06 12:42:58 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-03-06 12:43:12 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-03-06 12:43:55 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-03-06 12:44:09 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-03-06 12:45:13 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-03-06 12:45:26 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-03-06 12:46:23 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-03-06 12:46:37 [main] INFO : Validate: validateCanFillAvailabilityToTravel

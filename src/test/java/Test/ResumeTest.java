@@ -1,5 +1,6 @@
 package Test;
 import Data.ConstantsData;
+import Maps.MainPageMap;
 import Utils.BaseTest;
 import Utils.LoggerUtil;
 import Utils.ProfileData;
@@ -7,69 +8,220 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ResumeTest extends BaseTest {
+    MainPageMap mainPageMap = new MainPageMap();
     @Test(groups = {"smoke"})
     public void validateLoginCredetianls() {
         try {
             LoggerUtil.debug(ConstantsData.LOG_ACTIONS);
-            loginPage.userLogin("ebgonzalez@techmahindra.com", "@Cristo1998");
+            loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             LoggerUtil.info(ConstantsData.LOG_COMPLETED);
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
         }
     }
 
     @Test(groups = {"smoke"})
-    public void updateProfileCorrectly(){
-        ProfileData pd = new ProfileData();
-        pd.profile= "Lorem";
-        pd.title = "Cosa";
-        pd.country = "Mexico";
-        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
-        mainPage.modifyProfile(pd);
+    public void updateProfileCorrectly() {
+       try{ ProfileData pd = new ProfileData();
+           mainPage.modifyProfile(pd);
+           pd.profile = commands.generateRandomLorem(10);
+            pd.title = commands.generateRandomLorem(1);
+            pd.country = ConstantsData.Mexico;
+            loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            if (test == null) {
+               System.out.println(ConstantsData.ERROR_MESSAGE);
+           } else {
+               System.out.println(ConstantsData.SUCCESS_MESSAGE);
+           }
+       } catch (Exception e) {
+           LoggerUtil.error(ConstantsData.LOG_ERROR);
+       }
     }
 
-    @Test (groups = {"regression"})
-    public void validateUserCanLogout(){
-        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+    @Test(groups = {"regression"})
+    public void validateUserCanLogout() {
+        try {loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+        Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
         mainPage.validateLogout();
-        Assert.assertEquals(driver.getCurrentUrl(), "http://localhost:3000/");
+        Assert.assertEquals(driver.getCurrentUrl(), ConstantsData.URL);
+        if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
+    }
+
+    @Test(groups = {"regression"})
+    public void validateUserCanCreateAnAccount() {
+        try{ loginPage.validateCreateAccount();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
+
+    }
+
+    @Test(groups = {"regression"})
+    public void validateUserCanResetPwd() {
+       try{ loginPage.validateResetPwd();
+           Assert.assertEquals(driver.getCurrentUrl(), ConstantsData.UrlHelp);
+           if (test == null) {
+               System.out.println(ConstantsData.ERROR_MESSAGE);
+           } else {
+               System.out.println(ConstantsData.SUCCESS_MESSAGE);
+           }
+       } catch (Exception e) {
+           LoggerUtil.error(ConstantsData.LOG_ERROR);
+       }
+    }
+
+    @Test(groups = {"regression"})
+    public void validateUserCanUpdateExperience() {
+        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            mainPage.validateUserCanUpdateExperience();
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
+    }
+
+    @Test(groups = {"regression"})
+    public void validateUserCanUpdateSkills() {
+        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanAddSkills();
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
+    }
+
+    @Test(groups = {"regression"})
+    public void validateUserCanAddEducation() {
+        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanAddEducation();
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
+    }
+
+    @Test(groups = {"regression"})
+    public void validateUserCanAddCertifications() {
+        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanAddCertifications();
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
+    }
+    @Test(groups = {"regression"}) // Added by Andrexo
+    public void validateUserCanAddLanguage() {
+        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanAddLanguage();
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
+    }
+
+    @Test(groups = {"regression"}) // Added by Andrexo
+    public void validateUserCanAddInterests() {
+       try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+           Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanAddInterests();
+           if (test == null) {
+               System.out.println(ConstantsData.ERROR_MESSAGE);
+           } else {
+               System.out.println(ConstantsData.SUCCESS_MESSAGE);
+           }
+       } catch (Exception e) {
+           LoggerUtil.error(ConstantsData.LOG_ERROR);
+       }
+    }
+
+    @Test (groups = {"regression"}) // Added By Andrexo
+    public void validateUserCanCancelInterests() {
+        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanCancelInterests();
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
     }
 
     @Test (groups = {"regression"})
-    public void validateUserCanCreateAnAccount(){
-        loginPage.validateCreateAccount();
+    public void validateCanFillAvailabilityToTravel(){
+        try { loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.userCanAddAvailabilityToTravel();
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
 
     }
+    @Test (groups = {"regression"})
+    public void validateUserCanFillAllResume(){
+        try { loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.fillAllResume();
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
 
-    @Test (groups = {"regression"})
-    public void validateUserCanResetPwd(){
-        loginPage.validateResetPwd();
     }
-
-    @Test (groups = {"regression"})
-    public void validateUserCanUpdateExperience(){
-        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
-        mainPage.validateUserCanUpdateExperience();
-    }
-    @Test (groups = {"regression"})
-    public void validateUserCanUpdateSkills(){
-        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
-        mainPage.validateUserCanAddSkills();
-    }
-    @Test (groups = {"regression"})
-    public void validateUserCanAddEducation(){
-        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
-        mainPage.validateUserCanAddEducation();
-    }
-    @Test (groups = {"regression"})
-    public void validateUserCanAddCertifications(){
-        loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
-        mainPage.validateUserCanAddCertifications();
-    }
-
 }
+

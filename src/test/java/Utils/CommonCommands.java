@@ -269,4 +269,10 @@ public class CommonCommands {
         return currentDate.format(format);
     }
 
+    public void selectDropdownByIndex(By dropdownElement, int index){
+        WebElement element= driver.findElement(dropdownElement);
+        Select select = new Select(element);
+        select.selectByIndex(index);
+    }
+
 }
