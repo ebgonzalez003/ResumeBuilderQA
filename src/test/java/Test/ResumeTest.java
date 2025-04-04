@@ -163,7 +163,7 @@ public class ResumeTest extends BaseTest {
         }
     }
 
-    @Test(groups = {"regression"}) // Added by Andrexo
+    @Test(groups = {"regression"})
     public void validateUserCanAddInterests() {
        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
@@ -178,7 +178,7 @@ public class ResumeTest extends BaseTest {
        }
     }
 
-    @Test (groups = {"regression"}) // Added By Andrexo
+    @Test (groups = {"regression"})
     public void validateUserCanCancelInterests() {
         try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
             Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));

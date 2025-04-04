@@ -12,9 +12,11 @@ public class ConstantsData {
     public final static String LOG_ERROR = "An error occurred while performing the action:";
     public final static String LOG_START = "Starting test: ";
     public final static String LOG_END = "Validate: ";
+
     // User credentials
     public final static String VALID_USERNAME =  "ebgonzalez@techmahindra.com";
     public final static String VALID_PASSWORD = "@Cristo1998";
+
     //Extra
     public final static String Mexico = "Mexico";
     public final static String URL = "http://localhost:3000/";
