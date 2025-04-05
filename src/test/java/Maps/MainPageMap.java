@@ -16,11 +16,13 @@ public class MainPageMap {
 
     // Top Page Section
     public By editNameBtn = By.xpath("//*[@alt='Remy Sharp']/../../button");
-    public By editProfileBtn = By.xpath("//*[@alt='Remy Sharp']/../..//div//button");
+    public By editProfileBtn = By.xpath("//*[@id='root']/div/div/div[2]/div[1]/div/div/div[2]/div[1]/div/button");
     public By titleTxtBx = By.id("input");
     public By selectCountryTxtBx = By.id("auto-select");
     public By closeCountryIcon = By.xpath("//button[@aria-label='Clear']//*[@data-testid='CloseIcon']");
     public By profileEditTxtBx = By.id("description");
+    public By saveProfileBtn = By.xpath("//*[@id='root']/div/div/div[2]/div[1]/div/div/div[2]/div[1]/div/button[1]");
+    public By informationMsg = By.xpath("//div[@class='MuiAlert-message css-1pxa9xg-MuiAlert-message']");
 
     // Experience Section
     public By addExperienceBtn = By.xpath("//h2[text()='EXPERIENCE']/following-sibling::div/button");
@@ -31,9 +33,13 @@ public class MainPageMap {
     public By descriptionBtn = By.id("standard-multiline-static");
     public By technologiesBtn = By.id("technologies");
     public By saveExperienceBtn = By.xpath("//div[3]/div[3]/div/div/div[3]/button[2]");
+    public By experienceAlertMsg = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']");
 
     // Skills Section
     public By addSkillsBtn = By.xpath("//h2[text()='SKILLS']/following-sibling::div/button");
+    public By categoryBxBtn = By.xpath("//div[3]/div[3]/div/div/div[2]/div[1]/div[2]/div/div/div/div/button");
+    public By skillBxBtn = By.xpath("//div[3]/div[3]/div/div/div[2]/div[2]/div[2]/div/div/div/div/button");
+    public By levelStartBtn = By.xpath("//div[3]/div[3]/div/div/div[2]/div[3]/div[2]/div/span/label[5]");
 
     // Education Section
     public By editEducationBtn = By.xpath("//h2[text()='EDUCATION']/following-sibling::div/button");

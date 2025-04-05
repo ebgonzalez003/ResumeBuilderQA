@@ -4,6 +4,8 @@ import Maps.MainPageMap;
 import Utils.BaseTest;
 import Utils.LoggerUtil;
 import Utils.ProfileData;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -29,8 +31,8 @@ public class ResumeTest extends BaseTest {
     @Test(groups = {"smoke"})
     public void updateProfileCorrectly() {
        try{ ProfileData pd = new ProfileData();
-           mainPage.modifyProfile(pd);
-           pd.profile = commands.generateRandomLorem(10);
+            mainPage.modifyProfile(pd);
+            pd.profile = commands.generateRandomLorem(10);
             pd.title = commands.generateRandomLorem(1);
             pd.country = ConstantsData.Mexico;
             loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
@@ -43,6 +45,21 @@ public class ResumeTest extends BaseTest {
        } catch (Exception e) {
            LoggerUtil.error(ConstantsData.LOG_ERROR);
        }
+    }
+    @Test(groups = {"smoke"})
+    public void validateUserCanEditProfile() {
+        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanEditProfile();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.informationMsg));
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
     }
 
     @Test(groups = {"regression"})
@@ -94,6 +111,7 @@ public class ResumeTest extends BaseTest {
     public void validateUserCanUpdateExperience() {
         try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
             mainPage.validateUserCanUpdateExperience();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.experienceAlertMsg));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {

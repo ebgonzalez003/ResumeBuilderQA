@@ -22,6 +22,11 @@ public class MainPage {
         commands.sendKeysToElement(mainPageMap.profileEditTxtBx, pd.profile);
         commands.clickElement(mainPageMap.saveBtn);
     }
+    public void validateUserCanEditProfile() {
+       commands.clickElement(mainPageMap.editProfileBtn);
+       commands.sendKeysToElement(mainPageMap.profileEditTxtBx, commands.generateRandomLorem(20));
+       commands.clickElement(mainPageMap.saveProfileBtn);
+    }
 
     public void validateLogout() {
         commands.clickElement(mainPageMap.hamburguerBtn);
@@ -42,6 +47,8 @@ public class MainPage {
 
     public void validateUserCanAddSkills() {
         commands.clickElement(mainPageMap.addSkillsBtn);
+        commands.clickElement(mainPageMap.categoryBxBtn);
+
     }
 
     public void validateUserCanAddEducation() {
