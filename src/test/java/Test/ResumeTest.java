@@ -241,5 +241,21 @@ public class ResumeTest extends BaseTest {
         }
 
     }
+    @Test (groups = {"regression"})
+    public void validateUserCanDeleteExperience(){
+        try { loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanDeleteExperience();
+            Assert.assertFalse(commands.isElementPresent(mainPageMap.experienceAlertMsg));
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
+
+    }
 }
 

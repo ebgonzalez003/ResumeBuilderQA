@@ -99,4 +99,18 @@ public class MainPage {
     public void fillAllResume(){
 
     }
+
+    public void validateUserCanDeleteExperience() {
+        commands.clickElement(mainPageMap.addExperienceBtn);
+        commands.sendKeysToElement(mainPageMap.companyTxtBx, "Techmahindra");
+        commands.sendKeysToElement(mainPageMap.projectTxtBx, "Google");
+        commands.sendKeysToElement(mainPageMap.roleTxtBx, "Test Engineer");
+        commands.sendKeysToElement(mainPageMap.locationTxtBx, "Monterrey");
+        commands.sendKeysToElement(mainPageMap.descriptionBtn, commands.generateRandomLorem(30));
+        commands.sendKeysToElement(mainPageMap.technologiesBtn, commands.generateRandomTechnologies(5));
+        commands.clickElement(mainPageMap.saveExperienceBtn);
+        commands.clickElement(mainPageMap.deleteExpBtn);
+        commands.waitForElementToBeVisible(mainPageMap.deletePopUp);
+        commands.clickElement(mainPageMap.deleteBtnPopUp);
+    }
 }

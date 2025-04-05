@@ -33,7 +33,10 @@ public class MainPageMap {
     public By descriptionBtn = By.id("standard-multiline-static");
     public By technologiesBtn = By.id("technologies");
     public By saveExperienceBtn = By.xpath("//div[3]/div[3]/div/div/div[3]/button[2]");
-    public By experienceAlertMsg = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']");
+    public By experienceAlertMsg = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']g");
+    public By deleteExpBtn = By.xpath("//*[@id='root']/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div/div[2]/button[2]");
+    public By deletePopUp = By.xpath("//*[@id=':rd:']");
+    public By deleteBtnPopUp = By.xpath("//div[3]/div[3]/div/div/div/button[2]");
 
     // Skills Section
     public By addSkillsBtn = By.xpath("//h2[text()='SKILLS']/following-sibling::div/button");
