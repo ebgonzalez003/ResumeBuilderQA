@@ -1,5 +1,6 @@
 package Utils;
 import com.aventstack.extentreports.ExtentTest;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
@@ -11,7 +12,6 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -21,7 +21,7 @@ public class CommonCommands {
     Actions actions;
     public ExtentTest test;
 
-    // Constructor
+
     public CommonCommands(WebDriver driver, ExtentTest test) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -29,7 +29,7 @@ public class CommonCommands {
         this.test = test;
     }
 
-    // Method to click an element with explicit wait
+
     public void clickElement(By locator) {
         try {
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -40,7 +40,7 @@ public class CommonCommands {
         }
     }
 
-    // Method to send text to an input field with explicit wait
+
     public void sendKeysToElement(By locator, String text) {
         try {
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -52,39 +52,39 @@ public class CommonCommands {
         }
     }
 
-    // Method to handle a list of elements
+
     public List<WebElement> getElements(By locator) {
         return driver.findElements(locator);
     }
 
-    // Method to click a specific item within a list
+
     public void clickElementFromList(By locator, int index) {
         List<WebElement> elements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
         elements.get(index).click();
     }
 
-    // Method to select an option by visible text in a dropdown (Select element)
+
     public void selectOptionByText(By locator, String visibleText) {
         WebElement dropdownElement = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         Select dropdown = new Select(dropdownElement);
         dropdown.selectByVisibleText(visibleText);
     }
 
-    // Method to select an option by value in a dropdown (Select element)
+
     public void selectOptionByValue(By locator, String value) {
         WebElement dropdownElement = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         Select dropdown = new Select(dropdownElement);
         dropdown.selectByValue(value);
     }
 
-    // Method to get the text of an element
+
     public String getTextFromElement(By locator) {
 
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element.getText();
     }
 
-    // Method to check if an element is present
+
     public boolean isElementPresent(By locator) {
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -103,13 +103,13 @@ public class CommonCommands {
         }
     }
 
-    // Método para esperar hasta que un elemento sea visible por un máximo de 10 segundos
+
     public void waitForElementToBeVisible(By element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(element)));
     }
 
-    // Método para esperar hasta que un elemento sea clickeable por un máximo de 10 segundos
+
     public void waitForElementToBeClickable(By element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -126,7 +126,7 @@ public class CommonCommands {
         actions.moveToElement(element).click().perform();
     }
 
-    // Method to check if an element is visible
+
     public boolean isElementVisible(By locator) {
         try {
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -137,49 +137,49 @@ public class CommonCommands {
 
     }
 
-    // Método para hacer clic y mantener presionado (click and hold)
+
     public void clickAndHoldActions(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.clickAndHold(element).perform();
     }
 
-    // Método para hacer doble clic en un elemento
+
     public void doubleClickActions(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.doubleClick(element).perform();
     }
 
-    // Método para arrastrar y soltar (drag and drop) de un elemento a otro
+
     public void dragAndDropActions(By sourceLocator, By targetLocator) {
         WebElement sourceElement = wait.until(ExpectedConditions.visibilityOfElementLocated(sourceLocator));
         WebElement targetElement = wait.until(ExpectedConditions.visibilityOfElementLocated(targetLocator));
         actions.dragAndDrop(sourceElement, targetElement).perform();
     }
 
-    // Método para mover el mouse sobre un elemento (hover)
+
     public void hoverOverElementActions(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.moveToElement(element).perform();
     }
 
-    // Método para arrastrar un elemento por ciertos offsets (drag and drop by offset)
+
     public void dragAndDropByOffsetActions(By locator, int xOffset, int yOffset) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.dragAndDropBy(element, xOffset, yOffset).perform();
     }
 
-    // Método para hacer clic derecho (context click)
+
     public void rightClickActions(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.contextClick(element).perform();
     }
 
-    // Método para enviar teclas de teclado a un elemento (teclas como ENTER, TAB, etc.)
+
     public void sendKeysToElementActions(By locator, CharSequence... keys) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.sendKeys(element, keys).perform();
     }
-    // Método para hacer clic en un elemento en un lugar específico (por coordenadas relativas al elemento)
+
     public void clickAtPositionActions(By locator, int xOffset, int yOffset) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         actions.moveToElement(element, xOffset, yOffset).click().perform();
@@ -269,10 +269,74 @@ public class CommonCommands {
         return currentDate.format(format);
     }
 
-    public void selectDropdownByIndex(By dropdownElement, int index){
-        WebElement element= driver.findElement(dropdownElement);
-        Select select = new Select(element);
-        select.selectByIndex(index);
-    }
 
+    public void randomSelect(By locator) {
+        Random random = new Random();
+        int flechas = random.nextInt(12) + 1;
+
+        Actions actions = new Actions(driver);
+
+        for (int i = 0; i < flechas; i++) {
+            actions.sendKeys(Keys.ARROW_DOWN).perform();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        actions.sendKeys(Keys.ENTER).perform();
+    }
+    public void randomSelect2(By locator) {
+        Random random = new Random();
+        int flechas = random.nextInt(1) + 1;
+
+        Actions actions = new Actions(driver);
+
+        for (int i = 0; i < flechas; i++) {
+            actions.sendKeys(Keys.ARROW_DOWN).perform();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        actions.sendKeys(Keys.ENTER).perform();
+    }
+    public void selectRandomStar() {
+        Random rand = new Random();
+        int starToSelect = rand.nextInt(5) + 1;
+        String starXPath = String.format("//div[3]/div[3]/div/div/div[2]/div[3]/div[2]/div/span/label[%d]", starToSelect);
+        WebElement starElement = driver.findElement(By.xpath(starXPath));
+        starElement.click();
+    }
+    public String generateRandomDate() {
+        Random rand = new Random();
+        int day = rand.nextInt(30) + 1;
+        int month = rand.nextInt(12) + 1;
+        int year = rand.nextInt(26) + 2000;
+
+        return "";
+    }
+    public String generateDateWithGreaterYear(String previousDate) {
+        Random rand = new Random();
+        String[] dateParts = previousDate.split("/");
+        int previousYear = Integer.parseInt(dateParts[2]);
+        int day = rand.nextInt(30) + 1;
+        int month = rand.nextInt(12) + 1;
+        int year = rand.nextInt(2025 - previousYear) + previousYear + 1;
+        String formattedDay = String.format("%02d", day);
+        String formattedMonth = String.format("%02d", month);
+        return formattedDay + "/" + formattedMonth + "/" + year;
+    }
+    public void pressEnter() {
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ENTER).build().perform();
+    }
+    public void pressArrowUpAndEnter() {
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ARROW_UP)
+                .sendKeys(Keys.ENTER)
+                .build()
+                .perform();
+    }
 }

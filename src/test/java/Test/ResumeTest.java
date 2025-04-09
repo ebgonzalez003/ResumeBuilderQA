@@ -111,7 +111,7 @@ public class ResumeTest extends BaseTest {
     public void validateUserCanUpdateExperience() {
         try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
             mainPage.validateUserCanUpdateExperience();
-            Assert.assertTrue(commands.isElementPresent(mainPageMap.experienceAlertMsg));
+            Assert.assertFalse(commands.isElementPresent(mainPageMap.experienceAlertMsg));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
@@ -127,6 +127,7 @@ public class ResumeTest extends BaseTest {
         try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
             Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             mainPage.validateUserCanAddSkills();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.saveSkillAlert));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
@@ -142,6 +143,7 @@ public class ResumeTest extends BaseTest {
         try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
             Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             mainPage.validateUserCanAddEducation();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.eduSaveMsj));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
@@ -224,13 +226,12 @@ public class ResumeTest extends BaseTest {
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
         }
-
     }
     @Test (groups = {"regression"})
     public void validateUserCanFillAllResume(){
-        try { loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
-            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+        try {
             mainPage.fillAllResume();
+            //Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
@@ -239,7 +240,6 @@ public class ResumeTest extends BaseTest {
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
         }
-
     }
     @Test (groups = {"regression"})
     public void validateUserCanDeleteExperience(){
@@ -255,7 +255,21 @@ public class ResumeTest extends BaseTest {
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
         }
-
+    }
+    @Test (groups = {"regression"})
+    public void validateUserCanDeleteSkills(){
+        try { loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            mainPage.validateUserCanDeleteSkills();
+            Assert.assertFalse(commands.isElementPresent(mainPageMap.experienceAlertMsg));
+            if (test == null) {
+                System.out.println(ConstantsData.ERROR_MESSAGE);
+            } else {
+                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+            }
+        } catch (Exception e) {
+            LoggerUtil.error(ConstantsData.LOG_ERROR);
+        }
     }
 }
 

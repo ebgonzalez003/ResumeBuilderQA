@@ -1,12 +1,20 @@
 package Pages;
+import Maps.LoginPageMap;
 import Maps.MainPageMap;
 import Utils.CommonCommands;
 import Utils.ProfileData;
+import net.bytebuddy.asm.Advice;
+import org.apache.xmlbeans.SchemaTypeLoader;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import javax.swing.*;
+import java.sql.Driver;
 
 public class MainPage {
     CommonCommands commands;
     MainPageMap mainPageMap = new MainPageMap();
+    LoginPageMap loginPageMap = new LoginPageMap();
 
     public MainPage(CommonCommands commands) {
         this.commands = commands;
@@ -48,7 +56,11 @@ public class MainPage {
     public void validateUserCanAddSkills() {
         commands.clickElement(mainPageMap.addSkillsBtn);
         commands.clickElement(mainPageMap.categoryBxBtn);
-
+        commands.randomSelect(mainPageMap.categoryBxBtn);
+        commands.clickElement(mainPageMap.skillBxBtn);
+        commands.randomSelect2(mainPageMap.skillBxBtn);
+        commands.selectRandomStar();
+        commands.clickElement(mainPageMap.saveSkillsBtn);
     }
 
     public void validateUserCanAddEducation() {
@@ -56,6 +68,12 @@ public class MainPage {
         commands.sendKeysToElement(mainPageMap.degreeTxtBx, "Professional");
         commands.sendKeysToElement(mainPageMap.studyTxtBx, "Engineering");
         commands.sendKeysToElement(mainPageMap.institutionTxtBx, "UNID");
+        commands.clickElement(mainPageMap.startEduDate);
+        commands.clickElement(mainPageMap.startEduDateOpt);
+        commands.clickElement(mainPageMap.endEduDate);
+        commands.clickElement(mainPageMap.startEduDateOpt);
+        commands.sendKeysToElement(mainPageMap.countrySelect, "Mexico");
+        commands.clickElement(mainPageMap.saveEduBtn);
     }
 
     public void validateUserCanAddCertifications() {
@@ -96,8 +114,51 @@ public class MainPage {
         commands.sendKeysToElement(mainPageMap.visaTypeBx, "B2");
         commands.clickElement(mainPageMap.travelSaveBtn);
     }
-    public void fillAllResume(){
-
+    public void fillAllResume() throws InterruptedException {
+        commands.clickElement(loginPageMap.createAccountBtn);
+        commands.sendKeysToElement(loginPageMap.nameTxtBx, "Emiliano");
+        commands.sendKeysToElement(loginPageMap.lastNameTxtBx, "Gonzalez");
+        String email = commands.generateEmail();
+        commands.sendKeysToElement(loginPageMap.emailTxtBx, email);
+        commands.sendKeysToElement(loginPageMap.titleTxtBx, "engineer");
+        commands.sendKeysToElement(loginPageMap.passwordTxtBx, "@Gpassword1");
+        commands.clickElement(loginPageMap.createBtn);
+        Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+        commands.clickElement(mainPageMap.editProfileBtn);
+        commands.sendKeysToElement(mainPageMap.profileEditTxtBx, commands.generateRandomLorem(20));
+        commands.clickElement(mainPageMap.saveProfileBtn);
+        Assert.assertTrue(commands.isElementPresent(mainPageMap.informationMsg));
+        commands.clickElement(mainPageMap.addExperienceBtn);
+        commands.sendKeysToElement(mainPageMap.companyTxtBx, "Techmahindra");
+        commands.sendKeysToElement(mainPageMap.projectTxtBx, "Google");
+        commands.sendKeysToElement(mainPageMap.roleTxtBx, "Test Engineer");
+        commands.sendKeysToElement(mainPageMap.locationTxtBx, "Monterrey");
+        commands.sendKeysToElement(mainPageMap.descriptionBtn, commands.generateRandomLorem(30));
+        commands.sendKeysToElement(mainPageMap.technologiesBtn, commands.generateRandomTechnologies(5));
+        commands.clickElement(mainPageMap.saveExperienceBtn);
+        Assert.assertFalse(commands.isElementPresent(mainPageMap.experienceAlertMsg));
+        commands.clickElement(mainPageMap.addSkillsBtn);
+        commands.clickElement(mainPageMap.categoryBxBtn);
+        commands.randomSelect(mainPageMap.categoryBxBtn);
+        commands.clickElement(mainPageMap.skillBxBtn);
+        commands.randomSelect2(mainPageMap.skillBxBtn);
+        commands.selectRandomStar();
+        commands.clickElement(mainPageMap.saveSkillsBtn);
+        Assert.assertTrue(commands.isElementPresent(mainPageMap.saveSkillAlert));
+        commands.scrollToElement(mainPageMap.languagesAddBtn);
+        commands.clickElement(mainPageMap.editEducationBtn);
+        commands.sendKeysToElement(mainPageMap.degreeTxtBx, "Professional");
+        commands.sendKeysToElement(mainPageMap.studyTxtBx, "Engineering");
+        commands.sendKeysToElement(mainPageMap.institutionTxtBx, "UNID");
+        commands.clickElement(mainPageMap.startEduDate);
+        commands.clickElement(mainPageMap.startEduDateOpt);
+        commands.clickElement(mainPageMap.endEduDate);
+        commands.clickElement(mainPageMap.startEduDateOpt);
+        commands.clickElement(mainPageMap.countrySelect);
+        commands.clickElement(mainPageMap.countryDrop);
+        commands.pressArrowUpAndEnter();
+        commands.clickElement(mainPageMap.saveEduBtn);
+       Assert.assertTrue(commands.isElementPresent(mainPageMap.eduSaveMsj));
     }
 
     public void validateUserCanDeleteExperience() {
@@ -112,5 +173,17 @@ public class MainPage {
         commands.clickElement(mainPageMap.deleteExpBtn);
         commands.waitForElementToBeVisible(mainPageMap.deletePopUp);
         commands.clickElement(mainPageMap.deleteBtnPopUp);
+    }
+    public void validateUserCanDeleteSkills() {
+        commands.clickElement(mainPageMap.addSkillsBtn);
+        commands.clickElement(mainPageMap.categoryBxBtn);
+        commands.randomSelect(mainPageMap.categoryBxBtn);
+        commands.clickElement(mainPageMap.skillBxBtn);
+        commands.randomSelect2(mainPageMap.skillBxBtn);
+        commands.selectRandomStar();
+        commands.clickElement(mainPageMap.saveSkillsBtn);
+        commands.clickElement(mainPageMap.deleteSkillBtn);
+        commands.clickElement(mainPageMap.deleteSkillBtn);
+        commands.clickElement(mainPageMap.deleteConfirm);
     }
 }

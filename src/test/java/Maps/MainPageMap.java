@@ -2,6 +2,8 @@ package Maps;
 
 import org.openqa.selenium.By;
 
+import java.security.PublicKey;
+
 public class MainPageMap {
     // Common Section
     public By saveBtn = By.xpath("//*[@data-testid='SaveIcon']");
@@ -43,12 +45,24 @@ public class MainPageMap {
     public By categoryBxBtn = By.xpath("//div[3]/div[3]/div/div/div[2]/div[1]/div[2]/div/div/div/div/button");
     public By skillBxBtn = By.xpath("//div[3]/div[3]/div/div/div[2]/div[2]/div[2]/div/div/div/div/button");
     public By levelStartBtn = By.xpath("//div[3]/div[3]/div/div/div[2]/div[3]/div[2]/div/span/label[5]");
+    public By saveSkillsBtn = By.xpath("//div[3]/div[3]/div/div/div[3]/button[2]");
+    public By saveSkillAlert = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']");
+    public By deleteSkillBtn = By.xpath("//*[@id='root']/div/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/button[2]");
+    public By deleteConfirm = By.xpath("//div[3]/div[3]/div/div/div/button[2]");
 
     // Education Section
     public By editEducationBtn = By.xpath("//h2[text()='EDUCATION']/following-sibling::div/button");
     public By degreeTxtBx = By.id("degree");
     public By studyTxtBx = By.id("fieldOfStudy");
     public By institutionTxtBx = By.id("institutionName");
+    public By startEduDate = By.xpath("//*[@id='root']/div/div/div[2]/div[3]/div[1]/form/div/div[2]/div/div/div[5]/div[2]/div/div/div/div/div/button");
+    public By startEduDateOpt = By.xpath("//div[3]/div[2]/div/div/div/div[2]/div/div/div[2]/div/div[1]/button[1]    ");
+    public By endEduDate = By.xpath("//*[@id='root']/div/div/div[2]/div[3]/div[1]/form/div/div[2]/div/div/div[6]/div[2]/div/div/div/div/div/button");
+    public By endEduDateOpt = By.xpath("/html/body/div[3]/div[2]/div/div/div/div[2]/div/div/div[2]/div/div[1]/button[2]");
+    public By countrySelect = By.id("country");
+    public By saveEduBtn = By.xpath("//*[@id='root']/div/div/div[2]/div[3]/div[1]/form/div/div[1]/div/button[1]");
+    public By eduSaveMsj = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']");
+    public By countryDrop = By.xpath("//*[@id='root']/div/div/div[2]/div[3]/div[1]/form/div/div[2]/div/div/div[7]/div[2]/div/div/div/div/div/div/button[2]/svg");
 
     // Certifications Section
     public By certificationsAddBtn = By.xpath("//h2[text()='CERTIFICATIONS/TRAININGS']/following-sibling::div/button");
