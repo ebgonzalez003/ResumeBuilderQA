@@ -231,7 +231,7 @@ public class ResumeTest extends BaseTest {
     public void validateUserCanFillAllResume(){
         try {
             mainPage.fillAllResume();
-            //Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
