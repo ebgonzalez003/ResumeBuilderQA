@@ -516,3 +516,66 @@
 2025-04-08 21:44:10 [main] INFO : Validate: validateUserCanDeleteExperience
 2025-04-08 21:45:51 [main] INFO : Starting test: validateUserCanFillAllResume
 2025-04-08 21:46:11 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-11 15:09:26 [main] INFO : Starting test: validateLoginCredetianls
+2025-04-11 15:09:27 [main] INFO : Action completed 
+2025-04-11 15:09:27 [main] INFO : Validate: validateLoginCredetianls
+2025-04-11 15:17:08 [main] INFO : Starting test: validateUserCanCreateAnAccount
+2025-04-11 15:17:09 [main] INFO : Validate: validateUserCanCreateAnAccount
+2025-04-11 15:20:47 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-11 15:21:06 [main] ERROR: An error occurred while performing the action:
+2025-04-11 15:21:06 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-11 15:21:13 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-11 15:21:33 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-11 15:27:25 [main] INFO : Starting test: updateProfileCorrectly
+2025-04-16 14:44:46 [main] INFO : Starting test: validateLoginCredetianls
+2025-04-16 14:44:47 [main] INFO : Action completed 
+2025-04-16 14:44:47 [main] INFO : Validate: validateLoginCredetianls
+2025-04-23 16:15:43 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 16:16:28 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-23 16:18:55 [main] INFO : Starting test: validateUserCanAddCertifications
+2025-04-23 16:18:57 [main] INFO : Validate: validateUserCanAddCertifications
+2025-04-23 16:19:16 [main] INFO : Starting test: validateUserCanAddCertifications
+2025-04-23 16:19:17 [main] INFO : Validate: validateUserCanAddCertifications
+2025-04-23 16:22:00 [main] INFO : Starting test: validateUserCanAddEducation
+2025-04-23 16:22:05 [main] INFO : Validate: validateUserCanAddEducation
+2025-04-23 16:22:18 [main] INFO : Starting test: validateUserCanAddCertifications
+2025-04-23 16:22:20 [main] INFO : Validate: validateUserCanAddCertifications
+2025-04-23 16:28:33 [main] INFO : Starting test: validateUserCanAddCertifications
+2025-04-23 16:28:35 [main] INFO : Validate: validateUserCanAddCertifications
+2025-04-23 16:31:33 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-04-23 16:31:34 [main] INFO : Validate: validateUserCanAddLanguage
+2025-04-23 16:32:16 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-04-23 16:32:17 [main] INFO : Validate: validateUserCanAddLanguage
+2025-04-23 16:33:10 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-04-23 16:33:11 [main] INFO : Validate: validateUserCanAddLanguage
+2025-04-23 16:34:53 [main] INFO : Starting test: validateUserCanAddLanguage
+2025-04-23 16:34:55 [main] INFO : Validate: validateUserCanAddLanguage
+2025-04-23 16:37:19 [main] INFO : Starting test: validateUserCanAddInterests
+2025-04-23 16:37:20 [main] INFO : Validate: validateUserCanAddInterests
+2025-04-23 16:38:56 [main] INFO : Starting test: validateUserCanAddInterests
+2025-04-23 16:38:57 [main] INFO : Validate: validateUserCanAddInterests
+2025-04-23 16:40:46 [main] INFO : Starting test: validateUserCanAddInterests
+2025-04-23 16:40:47 [main] INFO : Validate: validateUserCanAddInterests
+2025-04-23 16:41:41 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-04-23 16:41:42 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-04-23 16:45:32 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-04-23 16:45:33 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-04-23 16:47:07 [main] INFO : Starting test: validateCanFillAvailabilityToTravel
+2025-04-23 16:47:08 [main] INFO : Validate: validateCanFillAvailabilityToTravel
+2025-04-23 16:48:20 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 16:48:27 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-23 16:49:35 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 16:50:18 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-23 16:51:49 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 16:52:52 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 16:53:32 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-23 16:56:00 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 16:56:53 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-23 16:57:31 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 16:59:02 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 16:59:35 [main] ERROR: An error occurred while performing the action:
+2025-04-23 16:59:35 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-23 17:02:01 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 17:03:04 [main] INFO : Validate: validateUserCanFillAllResume
+2025-04-23 17:04:37 [main] INFO : Starting test: validateUserCanFillAllResume
+2025-04-23 17:05:42 [main] INFO : Validate: validateUserCanFillAllResume

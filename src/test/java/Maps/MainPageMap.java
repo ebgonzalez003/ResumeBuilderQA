@@ -6,6 +6,7 @@ import java.security.PublicKey;
 
 public class MainPageMap {
     // Common Section
+    public By downloadCvBtn = By.xpath("//*[@id='root']/div/div/div[1]/header/div/div[3]/button");
     public By saveBtn = By.xpath("//*[@data-testid='SaveIcon']");
     public By techMImg = By.xpath("//*[@id='root']/div/div/div[1]/header/div/div[1]/a/img");
 
@@ -72,6 +73,7 @@ public class MainPageMap {
     public By linkBx = By.id("link");
     public By saveCertBtn = By.xpath("//div[3]/div[3]/div/div/div[5]/button[2]");
     public By cancelCertBtn = By.xpath("//div[3]/div[3]/div/div/div[5]/button[1]");
+    public By saveCertMsg = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']");
 
     // Languages Section
     public By languagesAddBtn = By.xpath("//h2[text()='LANGUAGES']/following-sibling::div/button");
@@ -84,21 +86,25 @@ public class MainPageMap {
     public By langualeNativeOption = By.xpath("//li[text()='Native']");
     public By saveLangBtn = By.xpath("//div[3]/div[3]/div/div/div[3]/button[2]");
     public By cancelLangBtn = By.xpath("//div[3]/div[3]/div/div/div[3]/button[1]");
+    public By saveLangMsg = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']");
 
     // Interest Section
     public By interestAddBtn = By.xpath("//h2[text()='INTERESTS']/following-sibling::div/button");
     public By interestLabel = By.xpath("//h2[contains(text(),'ADD INTEREST')]");
-    public By interestField = By.xpath("//label[contains (text(),'Interest')]");
+    public By interestField = By.id("name");
     public By cancelInterestBtn = By.xpath("//h2[contains(text(),'ADD INTEREST')]//following-sibling::div[2]/button[1]");
     public By saveInterestBtn = By.xpath("//h2[contains(text(),'ADD INTEREST')]//following-sibling::div[2]/button[2]");
+    public By saveInterestMsg = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']");
 
     // Availability To Travel Section
     public By travelEditBtn = By.xpath("//h2[text()='AVAILABILITY TO TRAVEL']/following-sibling::div/button");
     public By travelSaveBtn = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/form/div/div[1]/div/button[1]");
     public By relocateChkBx = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/form/div/div[2]/div/div/div[2]/div/label/span");
     public By availabilityChckBx = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/form/div/div[2]/div/div/div[1]/div/label/span");
-    public By relocateChckBx = By.xpath("//*[@id='root']/div/div/div[2]/div/4]/div[3]/form/div/div[2]/div/div/div[2]/div/label/span/input");
+    public By relocateChckBx = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/form/div/div[2]/div/div/div[2]/div/label/span/input");
     public By passportExpDateBx = By.id(":r1l:");
     public By visaExpirationDateBx = By.id(":r1n:");
     public By visaTypeBx = By.id(":r1p:");
+    public By visaTypeOpt = By.xpath("//*[@id='root']/div/div/div[2]/div[4]/div[3]/div/div[2]/div/div/div[7]/div/p");
+    public By saveTSMsg = By.xpath("//div[@class = 'MuiAlert-message css-1pxa9xg-MuiAlert-message']");
 }

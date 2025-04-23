@@ -264,7 +264,7 @@ public class CommonCommands {
     }
 
     public String currentDate(){
-        LocalDate currentDate = LocalDate.now();
+        LocalDate currentDate = LocalDate.now().plusDays(1);
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return currentDate.format(format);
     }

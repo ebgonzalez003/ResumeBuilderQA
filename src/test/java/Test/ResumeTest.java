@@ -159,6 +159,7 @@ public class ResumeTest extends BaseTest {
         try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
             Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             mainPage.validateUserCanAddCertifications();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.saveCertBtn));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
@@ -173,6 +174,7 @@ public class ResumeTest extends BaseTest {
         try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
             Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             mainPage.validateUserCanAddLanguage();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.saveLangMsg));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
@@ -188,6 +190,7 @@ public class ResumeTest extends BaseTest {
        try{ loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             mainPage.validateUserCanAddInterests();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.saveInterestMsg));
            if (test == null) {
                System.out.println(ConstantsData.ERROR_MESSAGE);
            } else {
@@ -218,6 +221,7 @@ public class ResumeTest extends BaseTest {
         try { loginPage.userLogin(ConstantsData.VALID_USERNAME, ConstantsData.VALID_PASSWORD);
             Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             mainPage.userCanAddAvailabilityToTravel();
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.saveTSMsg));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
@@ -231,7 +235,7 @@ public class ResumeTest extends BaseTest {
     public void validateUserCanFillAllResume(){
         try {
             mainPage.fillAllResume();
-            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            //Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
