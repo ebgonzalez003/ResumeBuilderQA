@@ -1,8 +1,5 @@
 package Maps;
-
 import org.openqa.selenium.By;
-
-import java.security.PublicKey;
 
 public class MainPageMap {
     // Common Section

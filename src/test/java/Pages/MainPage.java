@@ -3,13 +3,6 @@ import Maps.LoginPageMap;
 import Maps.MainPageMap;
 import Utils.CommonCommands;
 import Utils.ProfileData;
-import net.bytebuddy.asm.Advice;
-import org.apache.xmlbeans.SchemaTypeLoader;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
-import javax.swing.*;
-import java.sql.Driver;
 
 public class MainPage {
     CommonCommands commands;
@@ -47,7 +40,6 @@ public class MainPage {
         commands.sendKeysToElement(mainPageMap.projectTxtBx, "Google");
         commands.sendKeysToElement(mainPageMap.roleTxtBx, "Test Engineer");
         commands.sendKeysToElement(mainPageMap.locationTxtBx, "Monterrey");
-        //commands.selectRandomDate("//div[3]/div[3]/div/div/div[2]/div[3]/div[1]/div/div/div/button","//div[4]/div[2]/div/div/div/div[2]/div/div/div[2]/div/div[1]/button", 30);
         commands.sendKeysToElement(mainPageMap.descriptionBtn, commands.generateRandomLorem(30));
         commands.sendKeysToElement(mainPageMap.technologiesBtn, commands.generateRandomTechnologies(5));
         commands.clickElement(mainPageMap.saveExperienceBtn);
@@ -110,7 +102,7 @@ public class MainPage {
     public void userCanAddAvailabilityToTravel(){
         commands.scrollToElementAndClick(mainPageMap.travelEditBtn);
         commands.clickElement(mainPageMap.availabilityChckBx);
-        commands.clickElement(mainPageMap.relocateChckBx);
+        commands.clickElement(mainPageMap.relocateChkBx);
         commands.sendKeysToElement(mainPageMap.passportExpDateBx, String.valueOf(commands.currentDate()));
         commands.sendKeysToElement(mainPageMap.visaExpirationDateBx, String.valueOf(commands.currentDate()));
         commands.sendKeysToElement(mainPageMap.visaTypeBx, "B2");

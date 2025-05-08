@@ -4,8 +4,6 @@ import Maps.MainPageMap;
 import Utils.BaseTest;
 import Utils.LoggerUtil;
 import Utils.ProfileData;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,6 +20,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -41,6 +40,7 @@ public class ResumeTest extends BaseTest {
                System.out.println(ConstantsData.ERROR_MESSAGE);
            } else {
                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+               System.out.println(ConstantsData.SUCCESS_TEST);
            }
        } catch (Exception e) {
            LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -56,6 +56,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -72,6 +73,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -86,6 +88,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -101,6 +104,7 @@ public class ResumeTest extends BaseTest {
                System.out.println(ConstantsData.ERROR_MESSAGE);
            } else {
                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+               System.out.println(ConstantsData.SUCCESS_TEST);
            }
        } catch (Exception e) {
            LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -116,6 +120,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -132,6 +137,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -148,6 +154,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -164,6 +171,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -179,6 +187,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -195,6 +204,7 @@ public class ResumeTest extends BaseTest {
                System.out.println(ConstantsData.ERROR_MESSAGE);
            } else {
                System.out.println(ConstantsData.SUCCESS_MESSAGE);
+               System.out.println(ConstantsData.SUCCESS_TEST);
            }
        } catch (Exception e) {
            LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -210,6 +220,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -226,6 +237,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -235,11 +247,12 @@ public class ResumeTest extends BaseTest {
     public void validateUserCanFillAllResume(){
         try {
             mainPage.fillAllResume();
-            //Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
+            Assert.assertTrue(commands.isElementPresent(mainPageMap.techMImg));
             if (test == null) {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -255,6 +268,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
@@ -270,6 +284,7 @@ public class ResumeTest extends BaseTest {
                 System.out.println(ConstantsData.ERROR_MESSAGE);
             } else {
                 System.out.println(ConstantsData.SUCCESS_MESSAGE);
+                System.out.println(ConstantsData.SUCCESS_TEST);
             }
         } catch (Exception e) {
             LoggerUtil.error(ConstantsData.LOG_ERROR);
